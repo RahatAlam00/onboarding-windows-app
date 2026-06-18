@@ -1,8 +1,8 @@
-\# Competitive Landscape Reflection
+# Competitive Landscape Reflection
 
 
 
-\## What makes Focus Bear different from these apps?
+## What makes Focus Bear different from these apps?
 
 
 
@@ -10,7 +10,7 @@ Focus Bear combines habit building, distraction blocking, focus sessions, break 
 
 
 
-\## If you were a user, why would you choose Focus Bear over competitors?
+## If you were a user, why would you choose Focus Bear over competitors?
 
 
 
@@ -18,7 +18,7 @@ If I wanted a single platform to help me stay focused and maintain healthy routi
 
 
 
-\## What’s one feature that other apps have that Focus Bear doesn’t?
+## What’s one feature that other apps have that Focus Bear doesn’t?
 
 
 
@@ -26,7 +26,7 @@ One feature that stands out is Tiimo's visual planning and scheduling system. Ti
 
 
 
-\## Based on your research, what’s one improvement you think Focus Bear could make?
+## Based on your research, what’s one improvement you think Focus Bear could make?
 
 
 
