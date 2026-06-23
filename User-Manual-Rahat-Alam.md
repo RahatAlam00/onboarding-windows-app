@@ -28,7 +28,7 @@ I am a Windows Developer Intern at Focus Bear and a final-year Software Engineer
 
 
 
-As agreed with my internship schedule.
+Tuesday, Thursday and Friday as agreed with my internship schedule. I occasionally work additional hours during weekends when I have spare time or want to make extra progress on my tasks.
 
 
 
