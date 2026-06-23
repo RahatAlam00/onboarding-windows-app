@@ -1,8 +1,8 @@
-\# Inclusive Design Reflection
+# Inclusive Design Reflection
 
 
 
-\## Who Are Considered Vulnerable Populations?
+## Who Are Considered Vulnerable Populations?
 
 
 
@@ -10,17 +10,17 @@ Vulnerable populations include groups who may face additional barriers when acce
 
 
 
-\* People with ADHD
+* People with ADHD
 
-\* People with Autism Spectrum Disorder (ASD)
+* People with Autism Spectrum Disorder (ASD)
 
-\* People with physical or cognitive disabilities
+* People with physical or cognitive disabilities
 
-\* Elderly individuals
+* Elderly individuals
 
-\* People experiencing mental health challenges
+* People experiencing mental health challenges
 
-\* Individuals with low digital literacy
+* Individuals with low digital literacy
 
 
 
@@ -28,11 +28,11 @@ In digital spaces, these users may face challenges such as information overload,
 
 
 
-\---
+---
 
 
 
-\## Ethical Considerations When Designing for Neurodivergent Individuals
+## Ethical Considerations When Designing for Neurodivergent Individuals
 
 
 
@@ -40,17 +40,17 @@ When designing for neurodivergent users, it is important to:
 
 
 
-\* Respect different ways of thinking and working.
+* Respect different ways of thinking and working.
 
-\* Avoid overwhelming interfaces and excessive cognitive load.
+* Avoid overwhelming interfaces and excessive cognitive load.
 
-\* Use clear, predictable navigation.
+* Use clear, predictable navigation.
 
-\* Provide flexibility so users can customize their experience.
+* Provide flexibility so users can customize their experience.
 
-\* Avoid manipulative or shame-based design patterns.
+* Avoid manipulative or shame-based design patterns.
 
-\* Ensure accessibility and inclusivity are considered throughout development.
+* Ensure accessibility and inclusivity are considered throughout development.
 
 
 
@@ -58,11 +58,11 @@ The goal should be to support users rather than force them into a specific way o
 
 
 
-\---
+---
 
 
 
-\## Making Interactions and Content More Accessible
+## Making Interactions and Content More Accessible
 
 
 
@@ -70,19 +70,19 @@ To make products more accessible for people with ADHD or Autism:
 
 
 
-\* Use simple and clear language.
+* Use simple and clear language.
 
-\* Break information into smaller sections.
+* Break information into smaller sections.
 
-\* Maintain consistent layouts and navigation.
+* Maintain consistent layouts and navigation.
 
-\* Reduce unnecessary visual clutter.
+* Reduce unnecessary visual clutter.
 
-\* Provide clear instructions and expectations.
+* Provide clear instructions and expectations.
 
-\* Allow customization of notifications, colours, and focus settings.
+* Allow customization of notifications, colours, and focus settings.
 
-\* Use predictable workflows and terminology.
+* Use predictable workflows and terminology.
 
 
 
@@ -90,11 +90,11 @@ Reducing cognitive load helps users focus on their goals rather than figuring ou
 
 
 
-\---
+---
 
 
 
-\## Supporting Neurodivergent Team Members
+## Supporting Neurodivergent Team Members
 
 
 
@@ -102,31 +102,31 @@ In a professional setting, we can support neurodivergent colleagues by:
 
 
 
-\* Communicating clearly and directly.
+* Communicating clearly and directly.
 
-\* Providing written instructions when possible.
+* Providing written instructions when possible.
 
-\* Respecting different communication styles.
+* Respecting different communication styles.
 
-\* Allowing flexibility in how work is completed.
+* Allowing flexibility in how work is completed.
 
-\* Giving constructive and specific feedback.
+* Giving constructive and specific feedback.
 
-\* Avoiding assumptions about how people prefer to work.
+* Avoiding assumptions about how people prefer to work.
 
-\* Creating an environment where questions are encouraged.
-
-
-
-\---
+* Creating an environment where questions are encouraged.
 
 
 
-\# Reflection
+---
 
 
 
-\## How Can You Adjust Your Communication Style To Be More Inclusive?
+# Reflection
+
+
+
+## How Can You Adjust Your Communication Style To Be More Inclusive?
 
 
 
@@ -134,25 +134,25 @@ I can be more inclusive by:
 
 
 
-\* Using clear and straightforward language.
+* Using clear and straightforward language.
 
-\* Avoiding ambiguous instructions.
+* Avoiding ambiguous instructions.
 
-\* Providing written follow-up information when appropriate.
+* Providing written follow-up information when appropriate.
 
-\* Being patient when explaining concepts.
+* Being patient when explaining concepts.
 
-\* Confirming understanding instead of making assumptions.
+* Confirming understanding instead of making assumptions.
 
-\* Respecting that different people may process information differently.
-
-
-
-\---
+* Respecting that different people may process information differently.
 
 
 
-\## What Are Some Common UX or Communication Pitfalls?
+---
+
+
+
+## What Are Some Common UX or Communication Pitfalls?
 
 
 
@@ -160,19 +160,19 @@ Some common pitfalls include:
 
 
 
-\* Overly complex interfaces.
+* Overly complex interfaces.
 
-\* Too much information presented at once.
+* Too much information presented at once.
 
-\* Inconsistent navigation.
+* Inconsistent navigation.
 
-\* Unclear instructions or expectations.
+* Unclear instructions or expectations.
 
-\* Excessive notifications and distractions.
+* Excessive notifications and distractions.
 
-\* Using technical jargon without explanation.
+* Using technical jargon without explanation.
 
-\* Assuming all users learn and process information in the same way.
+* Assuming all users learn and process information in the same way.
 
 
 
@@ -180,11 +180,11 @@ These issues can increase frustration and make products less accessible.
 
 
 
-\---
+---
 
 
 
-\## What Is One Practical Change You Can Make In Your Work?
+## What Is One Practical Change You Can Make In Your Work?
 
 
 
@@ -196,15 +196,15 @@ By breaking information into smaller sections and using simple language, I can m
 
 
 
-\---
+---
 
 
 
-\# Task
+# Task
 
 
 
-\## First-Person Account Reviewed
+## First-Person Account Reviewed
 
 
 
@@ -224,11 +224,11 @@ After watching this account, I better understood the importance of reducing cogn
 
 
 
-\---
+---
 
 
 
-\## One Design Improvement For Focus Bear
+## One Design Improvement For Focus Bear
 
 
 
@@ -240,11 +240,11 @@ As a new user, I found some of these concepts difficult to understand immediatel
 
 
 
-\---
+---
 
 
 
-\## Supportive Response To A User Struggling With Executive Functioning
+## Supportive Response To A User Struggling With Executive Functioning
 
 
 
