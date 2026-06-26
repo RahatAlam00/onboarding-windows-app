@@ -202,5 +202,14 @@ This version is cleaner because:
 
 Clean code matters because software is usually maintained by teams, not just one person. Code that is simple, readable, maintainable, consistent, and efficient helps teams work faster, reduces bugs, and makes future changes easier.
 
+## 📌 Reflection: Naming Variables & Functions
 
+### 1. What makes a good variable or function name?
+A good name is intent-revealing; it should tell the reader exactly why it exists and what it represents without needing a comment. It should be descriptive but not wordy, using nouns for variables (e.g., `userEmailAddress`) and verbs for functions (e.g., `saveUserProfile`). Good names also follow consistent casing (like camelCase or PascalCase) and are easy to pronounce, making the code easier to discuss with a team.
+
+### 2. What issues can arise from poorly named variables?
+Poorly named variables (like `a`, `data`, or `temp`) lead to "mental mapping," where a developer has to constantly remember what each letter stands for. This causes confusion, increases the likelihood of bugs during maintenance, and makes it nearly impossible for a new developer to join the project and understand the logic quickly. It turns simple code into a puzzle that wastes time.
+
+### 3. How did refactoring improve code readability?
+Refactoring the messy code replaced vague identifiers (like `p` and `d`) with meaningful terms (`basePrice` and `hasDiscount`). By using constants like `TaxRate` instead of "magic numbers" like `0.1`, the logic becomes self-documenting. A developer can now read the code like a sentence and understand the business rules (calculating a total with tax and a potential discount) instantly, rather than having to dry-run the math in their head to figure out what is happening.
 
