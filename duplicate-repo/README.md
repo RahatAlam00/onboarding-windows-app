@@ -1,6 +1,7 @@
 ## Step 1: Duplicate this repository (including the issues)
 
 By the end of this process, you will:
+
 - Understand how to manage repositories on GitHub.
 - Learn how to use issues, labels, and milestones for tracking progress.
 - Gain hands-on experience with Node.js scripts and API automation.
@@ -10,15 +11,19 @@ Your first assignment is to **duplicate this repository** into a new public repo
 ---
 
 ## ✅ **How to Duplicate This Repository**
+
 Follow these steps carefully to set up your own intern repository.
 
 ### **1️⃣ Fork this repository **
+
 1. Refer to https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
 
 ### **2️⃣ Create a GitHub Personal Access Token**
+
 To allow the script to create issues, labels, and milestones, you need to generate a **fine-grained personal access token**.
 
 #### **Steps to Generate a Token:**
+
 1. Go to **[GitHub → Settings → Developer Settings → Personal Access Tokens](https://github.com/settings/tokens)**.
 2. Click on **"Generate new token (fine-grained)"**.
 3. Call it something like "Clone Focus Bear onboarding repo"
@@ -27,20 +32,20 @@ To allow the script to create issues, labels, and milestones, you need to genera
 
 ![CleanShot 2025-02-15 at 08 38 42](https://github.com/user-attachments/assets/3b9b8caa-b710-4706-bb53-b3d846f2de7e)
 
+- **Permissions:**
+  - Issues → **Read and Write**
+  - Metadata → **Read**
 
-   - **Permissions:**
-     - Issues → **Read and Write**
-     - Metadata → **Read**
-    
 ![CleanShot 2025-02-15 at 09 00 34](https://github.com/user-attachments/assets/3e1a7178-95ea-44a9-9f5f-3baaafc76a7a)
-
 
 5. Click **Generate Token** and copy the token (you won’t see it again!).
 
 ---
 
 ### **3️⃣ Clone This Repository**
+
 Download the source repository to your local machine:
+
 ```sh
  git clone https://github.com/Focus-Bear/onboarding-windows-app.git
  cd onboarding-windows-app
@@ -49,16 +54,19 @@ Download the source repository to your local machine:
 ### **4️⃣ Run the Script to Duplicate Issues, Labels, and Milestones**
 
 #### **Go to the `duplicate-repo` Folder**
+
 ```sh
 cd duplicate-repo
 ```
 
 #### **Install Dependencies**
+
 ```sh
 npm install
 ```
 
 #### **Create a `.env` File**
+
 1. Copy the example file:
    ```sh
    cp .env.example .env
@@ -73,12 +81,15 @@ npm install
    - Replace `your-username-intern-repo` with your **new repository name**.
 
 #### **Run the Script**
+
 ```sh
 node duplicateRepo.js
 ```
+
 This will **copy all issues, labels, and milestones** into your new repository.
 
 ### **5️⃣ Verify Your Repository**
+
 1. Go to your new repository on GitHub.
 2. Check that:
    - Issues have been copied ✅
@@ -86,12 +97,14 @@ This will **copy all issues, labels, and milestones** into your new repository.
    - Milestones are present ✅
 
 ### **6️⃣ Start Working on Issues!**
+
 - Now that your repository is set up, you can start working through the issues.
 - **Ask for help** if you run into problems! We’re here to support you. 😊
 
 ---
 
 ## ❓ Troubleshooting
+
 - **GitHub API rate limit exceeded?**
   - Wait a few minutes or generate a new token with higher rate limits.
 - **Issues/labels not appearing?**
@@ -104,5 +117,5 @@ This will **copy all issues, labels, and milestones** into your new repository.
 ---
 
 ## 🎉 Congratulations!
-You have successfully set up your own project repository! Now, move on to your first assigned issue and get started. 🚀
 
+You have successfully set up your own project repository! Now, move on to your first assigned issue and get started. 🚀

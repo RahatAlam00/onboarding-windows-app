@@ -50,11 +50,11 @@ public double calc(double p, int t, bool d)
 
 This code is difficult to read because:
 
-* The method name `calc` is vague.
-* Variable names like `p`, `t`, `d`, `x`, `y`, and `z` do not explain their purpose.
-* The values `0.1` and `5` are magic numbers that appear without explanation.
-* The condition `d == true` is unnecessary.
-* The method performs several operations without clearly describing the business logic.
+- The method name `calc` is vague.
+- Variable names like `p`, `t`, `d`, `x`, `y`, and `z` do not explain their purpose.
+- The values `0.1` and `5` are magic numbers that appear without explanation.
+- The condition `d == true` is unnecessary.
+- The method performs several operations without clearly describing the business logic.
 
 A developer reading this code would need to guess what the method is calculating.
 
@@ -92,12 +92,12 @@ public double CalculateTotalPrice(double basePrice, int itemCount, bool hasDisco
 
 This version is cleaner because:
 
-* The method name clearly explains what the function does.
-* Variable names describe their purpose.
-* Constants explain the meaning of fixed values.
-* The condition `if (hasDiscount)` is easier to read than `if (d == true)`.
-* The structure makes the calculation steps easier to follow.
-* Future developers can update the discount rate, tax rate, or delivery fee more safely.
+- The method name clearly explains what the function does.
+- Variable names describe their purpose.
+- Constants explain the meaning of fixed values.
+- The condition `if (hasDiscount)` is easier to read than `if (d == true)`.
+- The structure makes the calculation steps easier to follow.
+- Future developers can update the discount rate, tax rate, or delivery fee more safely.
 
 ---
 
@@ -115,13 +115,13 @@ Good variable and function names should clearly describe their purpose. A develo
 
 Some best practices include:
 
-* Use descriptive and meaningful names.
-* Use verbs for function names (e.g., `CalculateTotalPrice`, `ValidateInput`).
-* Use nouns for variable names (e.g., `customerName`, `taxAmount`).
-* Avoid single-letter names except for simple loop counters.
-* Avoid unnecessary abbreviations.
-* Follow the project's naming conventions consistently.
-* Use names that describe the business meaning rather than the implementation.
+- Use descriptive and meaningful names.
+- Use verbs for function names (e.g., `CalculateTotalPrice`, `ValidateInput`).
+- Use nouns for variable names (e.g., `customerName`, `taxAmount`).
+- Avoid single-letter names except for simple loop counters.
+- Avoid unnecessary abbreviations.
+- Follow the project's naming conventions consistently.
+- Use names that describe the business meaning rather than the implementation.
 
 ---
 
@@ -145,9 +145,9 @@ public bool chk(string s)
 
 This code is difficult to understand because:
 
-* The function name `chk` does not explain what it checks.
-* The variable `s` gives no indication that it represents a password.
-* A developer has to inspect the implementation to understand the function's purpose.
+- The function name `chk` does not explain what it checks.
+- The variable `s` gives no indication that it represents a password.
+- A developer has to inspect the implementation to understand the function's purpose.
 
 ---
 
@@ -169,13 +169,13 @@ public bool IsPasswordValid(string password)
 
 The refactored version improves readability by:
 
-* Renaming `chk` to `IsPasswordValid`, making the function's purpose immediately clear.
-* Renaming `s` to `password`, making the parameter meaningful.
-* Keeping the same logic while making the code much easier to understand.
+- Renaming `chk` to `IsPasswordValid`, making the function's purpose immediately clear.
+- Renaming `s` to `password`, making the parameter meaningful.
+- Keeping the same logic while making the code much easier to understand.
 
 ---
 
-# Reflection
+# Reflection: Naming Variables & Functions
 
 ## What Makes a Good Variable or Function Name?
 
@@ -188,3 +188,76 @@ Poorly named variables and functions make code difficult to understand, review, 
 ## How Did Refactoring Improve Code Readability?
 
 Refactoring improved readability by replacing vague names with descriptive ones that clearly communicate the purpose of the function and its parameter. A developer can now understand what the function does without reading its implementation. Clear naming reduces confusion, improves maintainability, and makes the code easier for other developers to understand.
+
+---
+
+# Code Formatting & Style Guides
+
+## Why Is Code Formatting Important?
+
+Code formatting is important because it makes code easier to read, understand, and maintain. When every developer follows the same style guide, the codebase becomes more consistent and easier to review. Consistent formatting also reduces unnecessary differences in commits and helps teams focus on the actual logic rather than spacing, indentation, or style disagreements.
+
+Style guides also help teams avoid common problems by creating shared rules for naming, spacing, imports, semicolons, function structure, and other coding patterns.
+
+## Airbnb JavaScript Style Guide
+
+The Airbnb JavaScript Style Guide is a widely used style guide for JavaScript projects. It provides rules for writing consistent, readable, and maintainable JavaScript code.
+
+Some examples of rules include:
+
+- Prefer clear variable declarations.
+- Avoid unnecessary loops when array methods can be used.
+- Avoid `continue` when code can be structured more clearly.
+- Avoid `await` inside loops unless there is a specific reason.
+- Avoid unnecessary `console.log` statements in production code.
+- Use consistent formatting and syntax.
+
+## ESLint and Prettier Setup
+
+I installed and configured ESLint and Prettier in the project.
+
+I used:
+
+```bash
+npm init -y
+npm install --save-dev eslint prettier eslint-config-airbnb-base eslint-plugin-import eslint-config-prettier
+```
+
+I created configuration files for ESLint and Prettier:
+
+- `.eslintrc.json`
+- `.prettierrc`
+
+I then ran:
+
+```bash
+npx prettier . --write
+npx eslint .
+```
+## What Issues Did the Linter Detect?
+
+ESLint detected several style and code quality issues in duplicate-repo/duplicate-repo.js.
+
+The main issues included:
+
+Use of console statements.
+Use of continue.
+Use of await inside loops.
+Use of for...of loops restricted by the Airbnb style guide.
+Use of ++, which Airbnb discourages.
+Suggestions to use object destructuring.
+Warnings about constant conditions.
+
+These issues do not necessarily mean the script is broken, because the script had already worked successfully for duplicating the repository issues and milestones. However, they show that the existing script does not fully follow the Airbnb JavaScript style guide.
+
+## Did Formatting Make the Code Easier to Read?
+
+Yes. Running Prettier made the code and Markdown files more consistently formatted. Consistent formatting makes the project easier to scan because spacing, indentation, quotes, and line breaks follow a predictable style.
+
+The linter also helped identify areas where the JavaScript code could be improved for maintainability and consistency. Even when not all linter issues are fixed immediately, seeing the warnings helps developers understand which parts of the code may need refactoring later.
+
+## Reflection
+
+This task helped me understand that formatting tools and linters are useful because they automate consistency. Instead of relying only on developers to remember every style rule, tools like Prettier and ESLint can detect issues and guide improvements.
+
+I also learned that formatting and linting are different. Prettier focuses mainly on formatting, while ESLint focuses more on code quality, style rules, and possible issues. Together, they help keep a codebase cleaner and easier for a team to maintain.
