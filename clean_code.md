@@ -38,7 +38,7 @@ Consistency means following the same coding style, naming conventions, formattin
 
 
 
-Efficiency means writing code that performs well and uses resources appropriately. However, efficiency should not lead to premature over-engineering. Code should first be correct and clear, then optimized when there is a real performance need.
+Efficiency means writing code that performs well and uses resources appropriately. However, readability and correctness should come first, and code should only be optimized when there is a demonstrated performance need.
 
 
 
@@ -56,29 +56,29 @@ public double calc(double p, int t, bool d)
 
 {
 
-&#x20;   double x = p;
+   double x = p;
 
-&#x20;   if (d == true)
+   if (d == true)
 
-&#x20;   {
+   {
 
-&#x20;       x = x - (x * 0.1);
+       x = x - (x * 0.1);
 
-&#x20;   }
+   }
 
-&#x20;   double y = x * 0.1;
+   double y = x * 0.1;
 
-&#x20;   double z = x + y;
+   double z = x + y;
 
-&#x20;   if (t > 0)
+   if (t > 0)
 
-&#x20;   {
+   {
 
-&#x20;       z = z + 5;
+       z = z + 5;
 
-&#x20;   }
+   }
 
-&#x20;   return z;
+   return z;
 
 }
 
@@ -124,45 +124,45 @@ public double CalculateTotalPrice(double basePrice, int itemCount, bool hasDisco
 
 {
 
-&#x20;   const double DiscountRate = 0.10;
+   const double DiscountRate = 0.10;
 
-&#x20;   const double TaxRate = 0.10;
+   const double TaxRate = 0.10;
 
-&#x20;   const double DeliveryFee = 5.00;
-
-
-
-&#x20;   double discountedPrice = basePrice;
+   const double DeliveryFee = 5.00;
 
 
 
-&#x20;   if (hasDiscount)
-
-&#x20;   {
-
-&#x20;       discountedPrice -= discountedPrice * DiscountRate;
-
-&#x20;   }
+   double discountedPrice = basePrice;
 
 
 
-&#x20;   double taxAmount = discountedPrice * TaxRate;
+   if (hasDiscount)
 
-&#x20;   double totalPrice = discountedPrice + taxAmount;
+   {
 
+       discountedPrice -= discountedPrice * DiscountRate;
 
-
-&#x20;   if (itemCount > 0)
-
-&#x20;   {
-
-&#x20;       totalPrice += DeliveryFee;
-
-&#x20;   }
+   }
 
 
 
-&#x20;   return totalPrice;
+   double taxAmount = discountedPrice * TaxRate;
+
+   double totalPrice = discountedPrice + taxAmount;
+
+
+
+   if (itemCount > 0)
+
+   {
+
+       totalPrice += DeliveryFee;
+
+   }
+
+
+
+   return totalPrice;
 
 }
 
