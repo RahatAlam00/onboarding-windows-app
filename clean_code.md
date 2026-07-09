@@ -385,3 +385,98 @@ Refactoring improved the structure by separating the responsibilities into small
 
 This makes the code easier to modify in the future. For example, if the tax calculation changes, only the `CalculateTax()` function needs to be updated. If the email logic changes, only the `SendOrderConfirmation()` function needs to be updated.
 
+---
+
+# Avoiding Code Duplication
+
+## DRY Principle
+
+DRY stands for "Don't Repeat Yourself."
+
+The main idea is that repeated logic should be written once and reused instead of being copied in multiple places. When the same code appears in many places, it becomes harder to maintain because any future change must be made in every repeated location.
+
+---
+
+## Example of Duplicated Code
+
+### Before Refactoring
+
+```csharp
+public double CalculateRegularCustomerTotal(double price)
+{
+    double tax = price * 0.10;
+    double total = price + tax;
+
+    return total;
+}
+
+public double CalculatePremiumCustomerTotal(double price)
+{
+    double discount = price * 0.10;
+    double discountedPrice = price - discount;
+
+    double tax = discountedPrice * 0.10;
+    double total = discountedPrice + tax;
+
+    return total;
+}
+
+```
+
+## What Were the Issues with Duplicated Code?
+
+The tax calculation was repeated in both functions:
+
+```csharp
+double tax = price * 0.10;
+double total = price + tax;
+```
+
+This duplication creates a maintenance problem. If the tax rate changes in the future, a developer must remember to update the tax calculation in multiple places. If one location is missed, the program may produce inconsistent results.
+
+### Refactored Version
+
+```csharp
+public double CalculateRegularCustomerTotal(double price)
+{
+    return AddTax(price);
+}
+
+public double CalculatePremiumCustomerTotal(double price)
+{
+    double discountedPrice = ApplyDiscount(price);
+
+    return AddTax(discountedPrice);
+}
+
+private double ApplyDiscount(double price)
+{
+    const double DiscountRate = 0.10;
+
+    return price - (price * DiscountRate);
+}
+
+private double AddTax(double price)
+{
+    const double TaxRate = 0.10;
+
+    return price + (price * TaxRate);
+}
+```
+## How Did Refactoring Improve Maintainability?
+
+Refactoring improved maintainability by moving the repeated tax calculation into one reusable function called `AddTax()`.
+
+Now, if the tax rate changes, it only needs to be updated in one place. This reduces the risk of inconsistent behaviour and makes the code easier to update, test, and understand.
+
+The refactored version also makes the code more readable because the function names clearly describe the business logic:
+
+`ApplyDiscount()` handles discount calculation.
+`AddTax()` handles tax calculation.
+`CalculateRegularCustomerTotal()` and `CalculatePremiumCustomerTotal()` reuse those smaller functions.
+
+# Reflection: Avoiding Code Duplication
+
+Duplicated code may seem harmless at first, but it becomes risky as the project grows. Repeated logic increases the chance of bugs because developers may update one copy of the code but forget another.
+
+The DRY principle helps keep code cleaner by encouraging reusable functions. This makes future changes safer and easier because important logic exists in one place instead of being scattered throughout the codebase.
