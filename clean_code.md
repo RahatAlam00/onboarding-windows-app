@@ -256,8 +256,132 @@ Yes. Running Prettier made the code and Markdown files more consistently formatt
 
 The linter also helped identify areas where the JavaScript code could be improved for maintainability and consistency. Even when not all linter issues are fixed immediately, seeing the warnings helps developers understand which parts of the code may need refactoring later.
 
-## Reflection
+## Reflection: Code formatting and style guide
 
 This task helped me understand that formatting tools and linters are useful because they automate consistency. Instead of relying only on developers to remember every style rule, tools like Prettier and ESLint can detect issues and guide improvements.
 
 I also learned that formatting and linting are different. Prettier focuses mainly on formatting, while ESLint focuses more on code quality, style rules, and possible issues. Together, they help keep a codebase cleaner and easier for a team to maintain.
+
+---
+
+# Writing Small, Focused Functions
+
+## Best Practices for Small Functions
+
+Small functions should do one clear job. A function becomes easier to understand when it has a single responsibility and a clear name.
+
+Best practices include:
+
+- Keep each function focused on one purpose.
+- Use clear function names that explain what the function does.
+- Avoid mixing many responsibilities in one function.
+- Break complex logic into helper functions.
+- Make functions easier to test independently.
+- Avoid very long functions that require too much scrolling or mental effort.
+
+---
+
+## Example of a Long Function
+
+### Before Refactoring
+
+```csharp
+public void ProcessOrder(double price, bool hasDiscount, string customerEmail)
+{
+    double finalPrice = price;
+
+    if (hasDiscount)
+    {
+        finalPrice = finalPrice - (finalPrice * 0.1);
+    }
+
+    double tax = finalPrice * 0.1;
+    finalPrice = finalPrice + tax;
+
+    Console.WriteLine("Order total: " + finalPrice);
+    Console.WriteLine("Sending email to " + customerEmail);
+}
+
+```
+## Why This Function Is Difficult to Maintain
+
+This function is doing too many things at once:
+
+- Calculating discount
+- Calculating tax
+- Printing the order total
+- Sending or simulating an email notification
+
+Because multiple responsibilities are mixed together, any future change requires modifying the same function. This increases complexity and makes the code harder to test, debug, and maintain.
+
+### Refactored Version
+
+```csharp
+
+public void ProcessOrder(double price, bool hasDiscount, string customerEmail)
+{
+    double finalPrice = CalculateFinalPrice(price, hasDiscount);
+
+    PrintOrderTotal(finalPrice);
+    SendOrderConfirmation(customerEmail);
+}
+
+private double CalculateFinalPrice(double price, bool hasDiscount)
+{
+    double discountedPrice = ApplyDiscount(price, hasDiscount);
+    double taxAmount = CalculateTax(discountedPrice);
+
+    return discountedPrice + taxAmount;
+}
+
+private double ApplyDiscount(double price, bool hasDiscount)
+{
+    if (!hasDiscount)
+    {
+        return price;
+    }
+
+    return price - (price * 0.1);
+}
+
+private double CalculateTax(double price)
+{
+    return price * 0.1;
+}
+
+private void PrintOrderTotal(double totalPrice)
+{
+    Console.WriteLine("Order total: " + totalPrice);
+}
+
+private void SendOrderConfirmation(string customerEmail)
+{
+    Console.WriteLine("Sending email to " + customerEmail);
+}
+
+```
+### Responsibilities of Each Function
+
+- `ProcessOrder()` coordinates the overall workflow.
+- `CalculateFinalPrice()` calculates the final amount after discount and tax.
+- `ApplyDiscount()` applies the discount when eligible.
+- `CalculateTax()` calculates the tax amount.
+- `PrintOrderTotal()` displays the final order total.
+- `SendOrderConfirmation()` handles the order confirmation message.
+
+Each function now has a single responsibility, making the code easier to understand and maintain.
+
+# Reflection: Writing Small, Focused Functions
+
+## Why Is Breaking Down Functions Beneficial?
+
+Breaking down functions is beneficial because each function becomes easier to understand, test, debug, and maintain. When a function does only one job, developers can understand its purpose quickly from the function name.
+
+Small functions also reduce cognitive load. Instead of reading one long function and trying to understand everything at once, developers can follow the program step by step.
+
+## How Did Refactoring Improve the Structure of the Code?
+
+Refactoring improved the structure by separating the responsibilities into smaller functions. The main `ProcessOrder()` function now reads like a clear summary of the process, while the details are handled by helper functions.
+
+This makes the code easier to modify in the future. For example, if the tax calculation changes, only the `CalculateTax()` function needs to be updated. If the email logic changes, only the `SendOrderConfirmation()` function needs to be updated.
+
