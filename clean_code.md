@@ -694,3 +694,126 @@ If code requires comments because variable names, function names, or logic are d
 For example, instead of using a vague variable such as `x` and adding a comment to explain it, the variable should be renamed to something meaningful such as `totalPrice`.
 
 This task helped me understand that comments should not compensate for unclear code. Clean and readable code should explain what it does, while useful comments should provide additional context about why a particular decision or behaviour exists.
+
+---
+
+# Handling Errors & Edge Cases
+
+## Strategies for Handling Errors and Edge Cases
+
+Error handling helps software respond safely when something unexpected happens. Edge cases are unusual or extreme inputs that may not occur often but can still cause incorrect behaviour or program failures.
+
+Some common strategies for handling errors and edge cases include:
+
+* Validating input before processing it.
+* Using guard clauses to reject invalid input early.
+* Using exceptions when a function cannot continue safely.
+* Checking for `null` or missing values.
+* Handling empty strings and empty collections.
+* Considering zero and negative numbers when working with calculations.
+* Providing clear error messages.
+* Logging errors when appropriate.
+* Avoiding silent failures where the program ignores a problem without explaining it.
+
+---
+
+## Guard Clauses
+
+A guard clause checks for invalid conditions at the beginning of a function and stops execution early if a requirement is not met.
+
+Guard clauses help keep the main logic simple and prevent invalid data from continuing through the function.
+
+For example:
+
+```csharp
+if (itemCount <= 0)
+{
+    throw new ArgumentException("Item count must be greater than zero.");
+}
+```
+
+This checks the input before performing the calculation.
+
+---
+
+## Example Without Proper Error Handling
+
+### Before Refactoring
+
+```csharp
+public double CalculatePricePerItem(double totalPrice, int itemCount)
+{
+    return totalPrice / itemCount;
+}
+```
+
+## What Was the Issue with the Original Code?
+
+The original function assumes that `totalPrice` and `itemCount` will always contain valid values.
+
+However, several edge cases are not handled:
+
+* `itemCount` could be zero.
+* `itemCount` could be negative.
+* `totalPrice` could be negative.
+
+A zero item count would result in an invalid calculation, while negative values do not make sense in this order calculation.
+
+The function does not validate its inputs before using them.
+
+---
+
+## Refactored Version with Guard Clauses
+
+```csharp
+public double CalculatePricePerItem(double totalPrice, int itemCount)
+{
+    if (totalPrice < 0)
+    {
+        throw new ArgumentOutOfRangeException(
+            nameof(totalPrice),
+            "Total price cannot be negative."
+        );
+    }
+
+    if (itemCount <= 0)
+    {
+        throw new ArgumentOutOfRangeException(
+            nameof(itemCount),
+            "Item count must be greater than zero."
+        );
+    }
+
+    return totalPrice / itemCount;
+}
+```
+
+## How Did the Refactoring Improve Error Handling?
+
+The refactored function uses guard clauses to validate the input before performing the calculation.
+
+The first guard clause prevents a negative total price from being processed.
+
+The second guard clause prevents zero or negative item counts.
+
+If invalid data is provided, the function stops immediately and throws an exception with a clear message. The main calculation only runs after the inputs have passed the validation checks.
+
+---
+
+# Reflection: Handling Errors & Edge Cases
+
+## What Was the Issue with the Original Code?
+
+The original function assumed that all inputs would be valid. It did not check for zero, negative values, or other invalid inputs before performing the calculation.
+
+This could lead to invalid results or unexpected behaviour. The function was therefore not reliable when receiving unexpected input.
+
+## How Does Handling Errors Improve Reliability?
+
+Handling errors improves reliability because the program can identify invalid conditions before they cause larger problems.
+
+Guard clauses prevent invalid data from reaching the main logic of a function. Clear exceptions also help developers understand what went wrong and where the problem occurred.
+
+This makes software easier to debug, safer to maintain, and more predictable for both developers and users.
+
+This task helped me understand that writing code is not only about making it work with normal inputs. Developers also need to think about edge cases by asking questions such as "What if the value is zero?", "What if the value is negative?", or "What if required data is missing?"
