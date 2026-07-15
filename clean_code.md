@@ -480,3 +480,99 @@ The refactored version also makes the code more readable because the function na
 Duplicated code may seem harmless at first, but it becomes risky as the project grows. Repeated logic increases the chance of bugs because developers may update one copy of the code but forget another.
 
 The DRY principle helps keep code cleaner by encouraging reusable functions. This makes future changes safer and easier because important logic exists in one place instead of being scattered throughout the codebase.
+
+---
+
+# Refactoring Code for Simplicity
+
+## Common Refactoring Techniques
+
+Refactoring is the process of improving the structure of existing code without changing its behaviour.
+
+Some common refactoring techniques include:
+
+- Simplifying complex conditional statements.
+- Breaking large functions into smaller functions.
+- Removing unnecessary variables.
+- Eliminating duplicated code.
+- Replacing magic numbers with named constants.
+- Using meaningful variable and function names.
+- Removing unnecessary nesting.
+
+---
+
+## Example of Overly Complicated Code
+
+### Before Refactoring
+
+```csharp
+public bool CanPurchase(int age, bool hasMembership)
+{
+    bool result = false;
+
+    if (age >= 18)
+    {
+        if (hasMembership == true)
+        {
+            result = true;
+        }
+        else
+        {
+            result = false;
+        }
+    }
+    else
+    {
+        result = false;
+    }
+
+    return result;
+}
+```
+
+## What Made This Code Complex?
+
+Although the function is small, it contains unnecessary complexity:
+
+- Multiple nested `if` statements.
+- A temporary variable (`result`) that is not needed.
+- Repeated assignments of `true` and `false`.
+- More lines of code than necessary for a simple decision.
+
+The business logic is simple, but the implementation makes it look more complicated than it is.
+
+---
+
+## Refactored Version
+
+```csharp
+public bool CanPurchase(int age, bool hasMembership)
+{
+    return age >= 18 && hasMembership;
+}
+```
+
+## Why Is This Version Simpler?
+
+The refactored version:
+
+- Removes unnecessary nesting.
+- Eliminates the temporary variable.
+- Returns the result directly.
+- Expresses the business rule in a single, easy-to-read statement.
+
+The behaviour of the function remains exactly the same.
+
+---
+
+# Reflection: Refactoring Code for Simplicity
+
+## What Made the Original Code Complex?
+
+The original code used several unnecessary `if` statements and a temporary variable to perform a simple check. This made the function longer than necessary and required more effort to understand.
+
+## How Did Refactoring Improve It?
+
+Refactoring simplified the function by expressing the business rule directly. The code became shorter, easier to read, and easier to maintain without changing its behaviour.
+
+This task taught me that simple code is often better than clever or overly detailed code. Removing unnecessary complexity makes software easier for both the original developer and future team members to understand.
