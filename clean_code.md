@@ -576,3 +576,121 @@ The original code used several unnecessary `if` statements and a temporary varia
 Refactoring simplified the function by expressing the business rule directly. The code became shorter, easier to read, and easier to maintain without changing its behaviour.
 
 This task taught me that simple code is often better than clever or overly detailed code. Removing unnecessary complexity makes software easier for both the original developer and future team members to understand.
+
+---
+
+# Commenting & Documentation
+
+## Best Practices for Comments and Documentation
+
+Comments should provide useful information that is not immediately obvious from the code itself. Good comments help developers understand why a decision was made, explain unusual behaviour, or provide important context.
+
+Best practices include:
+
+* Explain why the code exists rather than repeating what the code does.
+* Keep comments clear and concise.
+* Add comments when business rules or technical decisions are not obvious.
+* Document important limitations or unexpected behaviour.
+* Keep comments updated when the code changes.
+* Use clear variable and function names so unnecessary comments are avoided.
+* Avoid commenting every line of code.
+
+---
+
+## Example of Poorly Commented Code
+
+### Before Refactoring
+
+```csharp
+public double CalculatePrice(double price)
+{
+    // Create tax variable
+    double tax = price * 0.10;
+
+    // Add tax to price
+    price = price + tax;
+
+    // Check if price is greater than 100
+    if (price > 100)
+    {
+        // Subtract 5 from price
+        price = price - 5;
+    }
+
+    // Return price
+    return price;
+}
+```
+
+## Why Are These Comments Poor?
+
+The comments simply repeat what the code already says.
+
+For example:
+
+```csharp
+// Return price
+return price;
+```
+
+A developer can already understand that `return price` returns the price. The comment does not provide any additional information.
+
+These unnecessary comments make the code longer and create more text for developers to read without improving their understanding.
+
+---
+
+## Improved Version
+
+```csharp
+public double CalculatePrice(double price)
+{
+    const double TaxRate = 0.10;
+    const double HighValueOrderThreshold = 100;
+    const double HighValueOrderDiscount = 5;
+
+    double priceWithTax = price + (price * TaxRate);
+
+    // Orders above the threshold receive a fixed discount as part of the
+    // company's high-value order incentive.
+    if (priceWithTax > HighValueOrderThreshold)
+    {
+        priceWithTax -= HighValueOrderDiscount;
+    }
+
+    return priceWithTax;
+}
+```
+
+## How Were the Comments Improved?
+
+The unnecessary comments were removed because clear variable and constant names already explain what the code is doing.
+
+The remaining comment explains why orders above the threshold receive a discount. This business reason is not obvious from the code itself, so the comment provides useful context for future developers.
+
+---
+
+# Reflection: Commenting & Documentation
+
+## When Should You Add Comments?
+
+Comments should be added when they provide important context that cannot be understood easily from the code alone.
+
+Useful comments can explain:
+
+* Why a particular technical decision was made.
+* Complex business rules.
+* Unexpected behaviour or limitations.
+* Workarounds for external systems or known issues.
+* Important information that future developers need to understand.
+
+A good comment should help answer the question: "Why was the code written this way?"
+
+## When Should You Avoid Comments and Instead Improve the Code?
+
+Comments should be avoided when they simply describe what the code already does.
+
+If code requires comments because variable names, function names, or logic are difficult to understand, the code should first be refactored to make it clearer.
+
+For example, instead of using a vague variable such as `x` and adding a comment to explain it, the variable should be renamed to something meaningful such as `totalPrice`.
+
+This task helped me understand that comments should not compensate for unclear code. Clean and readable code should explain what it does, while useful comments should provide additional context about why a particular decision or behaviour exists.
