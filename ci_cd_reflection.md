@@ -7,3 +7,5 @@ I learned how Husky runs Git hooks locally and how lint-staged improves performa
 I also learned how GitHub Actions provides the same checks in the CI pipeline. Even if someone bypasses local checks, GitHub automatically validates the documentation before changes are merged into the main branch. This helps keep the repository consistent for everyone on the team.
 
 Overall, this task helped me understand how local quality checks and continuous integration work together to catch issues early, reduce manual review effort, and maintain high-quality documentation.
+
+This pull request is being used to test the automated CI checks.
