@@ -817,3 +817,88 @@ Guard clauses prevent invalid data from reaching the main logic of a function. C
 This makes software easier to debug, safer to maintain, and more predictable for both developers and users.
 
 This task helped me understand that writing code is not only about making it work with normal inputs. Developers also need to think about edge cases by asking questions such as "What if the value is zero?", "What if the value is negative?", or "What if required data is missing?"
+
+---
+
+# Writing Unit Tests for Clean Code
+
+## Importance of Unit Testing
+
+Unit tests automatically check whether small parts of a program behave as expected. They help developers detect errors early and provide confidence that existing functionality still works after code is changed or refactored.
+
+Unit tests are especially useful when maintaining clean code because developers can improve the structure of code and then rerun the tests to confirm that its behaviour has not changed.
+
+## Testing Framework
+
+I chose PyTest because the test code is simple to read and write in Python. PyTest automatically finds functions whose names begin with `test_` and reports whether each test passes or fails.
+
+I installed PyTest using:
+
+```bash
+python -m pip install pytest
+```
+I then ran the tests using:
+
+```bash
+pytest
+```
+## Function Tested
+
+I created a function called `calculate_price_per_item()` in `price_calculator.py`.
+
+```python
+def calculate_price_per_item(total_price, item_count):
+    if total_price < 0:
+        raise ValueError("Total price cannot be negative.")
+
+    if item_count <= 0:
+        raise ValueError("Item count must be greater than zero.")
+
+    return total_price / item_count
+```
+The function calculates the price per item while using guard clauses to reject invalid input.
+
+## Unit Tests Written
+
+I created four tests in `test_price_calculator.py`:
+
+- A normal calculation using a total price of 100 and 5 items
+- A negative total price
+- An item count of zero
+- A negative item count
+
+The tests included both normal behaviour and edge cases.
+
+## Test Result
+
+PyTest found and ran four tests:
+
+```bash
+collected 4 items
+test_price_calculator.py .... [100%]
+4 passed in 0.03s
+```
+
+All four tests passed successfully.
+
+# Reflection: Writing Unit Tests for Clean Code
+
+This task helped me understand that unit testing is not only about checking whether normal input works. Good tests should also check invalid inputs and edge cases.
+
+I also learned that tests act as a safety net. If the function is refactored later, the tests can be run again to check that the behaviour remains correct. This improves reliability and makes future changes safer.
+
+## How Do Unit Tests Help Keep Code Clean?
+
+Unit tests help keep code clean by giving developers confidence to refactor and improve code safely. After changing a function, tests can be run again to confirm that the expected behaviour still works.
+
+Tests also encourage developers to write smaller, focused functions because these functions are easier to test independently. They serve as practical documentation by showing how a function is expected to behave with both normal and invalid inputs.
+
+## What Issues Did I Find While Testing?
+
+The tests did not reveal any failures in the final implementation. However, they highlighted important edge cases that the function needed to handle:
+
+Negative total prices should not be accepted.
+An item count of zero would make the calculation invalid.
+A negative number of items does not make sense.
+
+The guard clauses correctly rejected these inputs by raising clear ValueError messages. Testing confirmed that both the normal calculation and the error-handling behaviour worked as intended.
