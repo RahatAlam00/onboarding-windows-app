@@ -4,16 +4,30 @@
   "description": "Welcome to your first task as a Focus Bear intern! This repository is designed to guide you through your onboarding process by providing **structured learning materials** and **practical tasks**. You’ll start by setting up your own project repository, which will serve as a workspace for your internship. This will help you become comfortable with GitHub workflows, automation, and best practices.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:markdown": "markdownlint-cli2",
+    "spellcheck": "cspell --no-progress",
+    "check:docs": "npm run lint:markdown -- \"**/*.md\" \"#node_modules\" && npm run spellcheck -- \"**/*.md\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.md": [
+      "markdownlint-cli2",
+      "cspell --no-progress"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cspell": "^10.0.1",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "markdownlint-cli2": "^0.23.1",
     "prettier": "^3.8.4"
   }
 }

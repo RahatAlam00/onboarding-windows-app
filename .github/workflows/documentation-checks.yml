@@ -1,0 +1,61 @@
+name: Documentation checks
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  documentation-checks:
+    name: Markdown lint and spell check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Find changed Markdown files
+        run: |
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            else
+            BASE_SHA="${{ github.event.before }}"
+            fi
+
+            git diff --name-only --diff-filter=ACMRT \
+            "$BASE_SHA" \
+            "${{ github.sha }}" \
+            -- "*.md" > changed-markdown-files.txt
+
+      - name: Run Markdown linting
+        run: |
+            if [ -s changed-markdown-files.txt ]; then
+            xargs -d '\n' npx markdownlint-cli2 < changed-markdown-files.txt
+            else
+            echo "No changed Markdown files to lint."
+            fi
+
+      - name: Run spell checking
+        run: |
+            if [ -s changed-markdown-files.txt ]; then
+            xargs -d '\n' npx cspell --no-progress < changed-markdown-files.txt
+            else
+            echo "No changed Markdown files to spell-check."
+            fi
