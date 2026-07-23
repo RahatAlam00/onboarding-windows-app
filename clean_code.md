@@ -1,5 +1,7 @@
 # Clean Code Principles
 
+<!-- cspell:ignore nameof -->
+
 ## Simplicity
 
 Simplicity means keeping code as straightforward as possible. Code should solve the problem without unnecessary complexity, clever tricks, or over-engineering. Simple code is easier to understand, test, debug, and modify.
@@ -22,7 +24,7 @@ Efficiency means writing code that performs well and uses resources appropriatel
 
 ---
 
-# Messy Code Example
+## Messy Code Example
 
 ```csharp
 public double calc(double p, int t, bool d)
@@ -60,7 +62,7 @@ A developer reading this code would need to guess what the method is calculating
 
 ---
 
-# Cleaner Version
+## Cleaner Version
 
 ```csharp
 public double CalculateTotalPrice(double basePrice, int itemCount, bool hasDiscount)
@@ -101,13 +103,13 @@ This version is cleaner because:
 
 ---
 
-# Reflection
+## Reflection
 
 Clean code matters because software is usually maintained by teams, not just one person. Code that is simple, readable, maintainable, consistent, and efficient helps teams work faster, reduces bugs, and makes future changes easier.
 
 ---
 
-# Naming Variables & Functions
+## Naming Variables & Functions
 
 ## Best Practices for Naming Variables and Functions
 
@@ -151,7 +153,7 @@ This code is difficult to understand because:
 
 ---
 
-## Refactored Version
+## Refactored Version of Unreadable Code
 
 ```csharp
 public bool IsPasswordValid(string password)
@@ -175,7 +177,7 @@ The refactored version improves readability by:
 
 ---
 
-# Reflection: Naming Variables & Functions
+## Reflection: Naming Variables & Functions
 
 ## What Makes a Good Variable or Function Name?
 
@@ -191,7 +193,7 @@ Refactoring improved readability by replacing vague names with descriptive ones 
 
 ---
 
-# Code Formatting & Style Guides
+## Code Formatting & Style Guides
 
 ## Why Is Code Formatting Important?
 
@@ -234,6 +236,7 @@ I then ran:
 npx prettier . --write
 npx eslint .
 ```
+
 ## What Issues Did the Linter Detect?
 
 ESLint detected several style and code quality issues in duplicate-repo/duplicate-repo.js.
@@ -264,7 +267,7 @@ I also learned that formatting and linting are different. Prettier focuses mainl
 
 ---
 
-# Writing Small, Focused Functions
+## Writing Small, Focused Functions
 
 ## Best Practices for Small Functions
 
@@ -303,6 +306,7 @@ public void ProcessOrder(double price, bool hasDiscount, string customerEmail)
 }
 
 ```
+
 ## Why This Function Is Difficult to Maintain
 
 This function is doing too many things at once:
@@ -314,7 +318,7 @@ This function is doing too many things at once:
 
 Because multiple responsibilities are mixed together, any future change requires modifying the same function. This increases complexity and makes the code harder to test, debug, and maintain.
 
-### Refactored Version
+### Simplified Refactored Version
 
 ```csharp
 
@@ -360,6 +364,7 @@ private void SendOrderConfirmation(string customerEmail)
 }
 
 ```
+
 ### Responsibilities of Each Function
 
 - `ProcessOrder()` coordinates the overall workflow.
@@ -371,7 +376,7 @@ private void SendOrderConfirmation(string customerEmail)
 
 Each function now has a single responsibility, making the code easier to understand and maintain.
 
-# Reflection: Writing Small, Focused Functions
+## Reflection: Writing Small, Focused Functions
 
 ## Why Is Breaking Down Functions Beneficial?
 
@@ -387,7 +392,7 @@ This makes the code easier to modify in the future. For example, if the tax calc
 
 ---
 
-# Avoiding Code Duplication
+## Avoiding Code Duplication
 
 ## DRY Principle
 
@@ -434,7 +439,7 @@ double total = price + tax;
 
 This duplication creates a maintenance problem. If the tax rate changes in the future, a developer must remember to update the tax calculation in multiple places. If one location is missed, the program may produce inconsistent results.
 
-### Refactored Version
+### Refactored Simpler Version
 
 ```csharp
 public double CalculateRegularCustomerTotal(double price)
@@ -463,6 +468,7 @@ private double AddTax(double price)
     return price + (price * TaxRate);
 }
 ```
+
 ## How Did Refactoring Improve Maintainability?
 
 Refactoring improved maintainability by moving the repeated tax calculation into one reusable function called `AddTax()`.
@@ -475,7 +481,7 @@ The refactored version also makes the code more readable because the function na
 `AddTax()` handles tax calculation.
 `CalculateRegularCustomerTotal()` and `CalculatePremiumCustomerTotal()` reuse those smaller functions.
 
-# Reflection: Avoiding Code Duplication
+## Reflection: Avoiding Code Duplication
 
 Duplicated code may seem harmless at first, but it becomes risky as the project grows. Repeated logic increases the chance of bugs because developers may update one copy of the code but forget another.
 
@@ -483,7 +489,7 @@ The DRY principle helps keep code cleaner by encouraging reusable functions. Thi
 
 ---
 
-# Refactoring Code for Simplicity
+## Refactoring Code for Simplicity
 
 ## Common Refactoring Techniques
 
@@ -543,7 +549,7 @@ The business logic is simple, but the implementation makes it look more complica
 
 ---
 
-## Refactored Version
+## Refactored Version of Complex Code
 
 ```csharp
 public bool CanPurchase(int age, bool hasMembership)
@@ -565,7 +571,7 @@ The behaviour of the function remains exactly the same.
 
 ---
 
-# Reflection: Refactoring Code for Simplicity
+## Reflection: Refactoring Code for Simplicity
 
 ## What Made the Original Code Complex?
 
@@ -579,7 +585,7 @@ This task taught me that simple code is often better than clever or overly detai
 
 ---
 
-# Commenting & Documentation
+## Commenting & Documentation
 
 ## Best Practices for Comments and Documentation
 
@@ -587,13 +593,13 @@ Comments should provide useful information that is not immediately obvious from 
 
 Best practices include:
 
-* Explain why the code exists rather than repeating what the code does.
-* Keep comments clear and concise.
-* Add comments when business rules or technical decisions are not obvious.
-* Document important limitations or unexpected behaviour.
-* Keep comments updated when the code changes.
-* Use clear variable and function names so unnecessary comments are avoided.
-* Avoid commenting every line of code.
+- Explain why the code exists rather than repeating what the code does.
+- Keep comments clear and concise.
+- Add comments when business rules or technical decisions are not obvious.
+- Document important limitations or unexpected behaviour.
+- Keep comments updated when the code changes.
+- Use clear variable and function names so unnecessary comments are avoided.
+- Avoid commenting every line of code.
 
 ---
 
@@ -669,7 +675,7 @@ The remaining comment explains why orders above the threshold receive a discount
 
 ---
 
-# Reflection: Commenting & Documentation
+## Reflection: Commenting & Documentation
 
 ## When Should You Add Comments?
 
@@ -677,11 +683,11 @@ Comments should be added when they provide important context that cannot be unde
 
 Useful comments can explain:
 
-* Why a particular technical decision was made.
-* Complex business rules.
-* Unexpected behaviour or limitations.
-* Workarounds for external systems or known issues.
-* Important information that future developers need to understand.
+- Why a particular technical decision was made.
+- Complex business rules.
+- Unexpected behaviour or limitations.
+- Workarounds for external systems or known issues.
+- Important information that future developers need to understand.
 
 A good comment should help answer the question: "Why was the code written this way?"
 
@@ -697,7 +703,7 @@ This task helped me understand that comments should not compensate for unclear c
 
 ---
 
-# Handling Errors & Edge Cases
+## Handling Errors & Edge Cases
 
 ## Strategies for Handling Errors and Edge Cases
 
@@ -705,15 +711,15 @@ Error handling helps software respond safely when something unexpected happens. 
 
 Some common strategies for handling errors and edge cases include:
 
-* Validating input before processing it.
-* Using guard clauses to reject invalid input early.
-* Using exceptions when a function cannot continue safely.
-* Checking for `null` or missing values.
-* Handling empty strings and empty collections.
-* Considering zero and negative numbers when working with calculations.
-* Providing clear error messages.
-* Logging errors when appropriate.
-* Avoiding silent failures where the program ignores a problem without explaining it.
+- Validating input before processing it.
+- Using guard clauses to reject invalid input early.
+- Using exceptions when a function cannot continue safely.
+- Checking for `null` or missing values.
+- Handling empty strings and empty collections.
+- Considering zero and negative numbers when working with calculations.
+- Providing clear error messages.
+- Logging errors when appropriate.
+- Avoiding silent failures where the program ignores a problem without explaining it.
 
 ---
 
@@ -736,9 +742,9 @@ This checks the input before performing the calculation.
 
 ---
 
-## Example Without Proper Error Handling
+## Before and After Refactoring
 
-### Before Refactoring
+### Before
 
 ```csharp
 public double CalculatePricePerItem(double totalPrice, int itemCount)
@@ -747,23 +753,12 @@ public double CalculatePricePerItem(double totalPrice, int itemCount)
 }
 ```
 
-## What Was the Issue with the Original Code?
+The original function assumed all input values were valid. It did not
+check whether `itemCount` was zero or negative, or whether
+`totalPrice` was negative. This could lead to invalid calculations or
+unexpected behaviour.
 
-The original function assumes that `totalPrice` and `itemCount` will always contain valid values.
-
-However, several edge cases are not handled:
-
-* `itemCount` could be zero.
-* `itemCount` could be negative.
-* `totalPrice` could be negative.
-
-A zero item count would result in an invalid calculation, while negative values do not make sense in this order calculation.
-
-The function does not validate its inputs before using them.
-
----
-
-## Refactored Version with Guard Clauses
+### After
 
 ```csharp
 public double CalculatePricePerItem(double totalPrice, int itemCount)
@@ -788,19 +783,13 @@ public double CalculatePricePerItem(double totalPrice, int itemCount)
 }
 ```
 
-## How Did the Refactoring Improve Error Handling?
-
-The refactored function uses guard clauses to validate the input before performing the calculation.
-
-The first guard clause prevents a negative total price from being processed.
-
-The second guard clause prevents zero or negative item counts.
-
-If invalid data is provided, the function stops immediately and throws an exception with a clear message. The main calculation only runs after the inputs have passed the validation checks.
+The refactored function uses guard clauses to validate the input before
+performing the calculation. Invalid values are rejected immediately with
+clear exceptions, making the function more reliable and easier to debug.
 
 ---
 
-# Reflection: Handling Errors & Edge Cases
+## Reflection: Handling Errors & Edge Cases
 
 ## What Was the Issue with the Original Code?
 
@@ -820,7 +809,7 @@ This task helped me understand that writing code is not only about making it wor
 
 ---
 
-# Writing Unit Tests for Clean Code
+## Writing Unit Tests for Clean Code
 
 ## Importance of Unit Testing
 
@@ -837,11 +826,13 @@ I installed PyTest using:
 ```bash
 python -m pip install pytest
 ```
+
 I then ran the tests using:
 
 ```bash
 pytest
 ```
+
 ## Function Tested
 
 I created a function called `calculate_price_per_item()` in `price_calculator.py`.
@@ -856,6 +847,7 @@ def calculate_price_per_item(total_price, item_count):
 
     return total_price / item_count
 ```
+
 The function calculates the price per item while using guard clauses to reject invalid input.
 
 ## Unit Tests Written
@@ -881,7 +873,7 @@ test_price_calculator.py .... [100%]
 
 All four tests passed successfully.
 
-# Reflection: Writing Unit Tests for Clean Code
+## Reflection: Writing Unit Tests for Clean Code
 
 This task helped me understand that unit testing is not only about checking whether normal input works. Good tests should also check invalid inputs and edge cases.
 
@@ -897,8 +889,8 @@ Tests also encourage developers to write smaller, focused functions because thes
 
 The tests did not reveal any failures in the final implementation. However, they highlighted important edge cases that the function needed to handle:
 
-Negative total prices should not be accepted.
-An item count of zero would make the calculation invalid.
-A negative number of items does not make sense.
+- Negative total prices should not be accepted.
+- An item count of zero would make the calculation invalid.
+- A negative number of items does not make sense.
 
 The guard clauses correctly rejected these inputs by raising clear ValueError messages. Testing confirmed that both the normal calculation and the error-handling behaviour worked as intended.
