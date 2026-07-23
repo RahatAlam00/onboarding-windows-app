@@ -58,7 +58,7 @@ Locking a computer prevents unauthorized access to company and personal informat
 
 A strong password should:
 
-- Be at least 12–16 characters long.
+- Be at least 12-16 characters long.
 
 - Contain a combination of letters, numbers, and symbols.
 
@@ -88,7 +88,7 @@ Even if a password is compromised, attackers are less likely to gain access with
 
 ---
 
-# Reflection
+## Reflection
 
 ## What Security Measures Do You Currently Follow and Where Can You Improve?
 
@@ -140,7 +140,7 @@ If I suspected a security breach, I would:
 
 ---
 
-# Task Completion
+## Task Completion
 
 ## Current Security Actions
 
