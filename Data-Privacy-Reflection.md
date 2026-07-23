@@ -18,7 +18,7 @@ After reviewing Focus Bear's Privacy Policy, I learned the following:
 
 ---
 
-# What Types of Data Are Considered Confidential at Focus Bear?
+## What Types of Data Are Considered Confidential at Focus Bear?
 
 Examples of confidential data include:
 
@@ -38,7 +38,7 @@ Examples of confidential data include:
 
 ---
 
-# Best Practices for Handling Confidential Data
+## Best Practices for Handling Confidential Data
 
 To protect confidential information, I should:
 
@@ -58,7 +58,7 @@ To protect confidential information, I should:
 
 ---
 
-# Responding to a Suspected Data Breach
+## Responding to a Suspected Data Breach
 
 If I suspect a data breach or accidental disclosure, I should:
 
@@ -74,7 +74,7 @@ If I suspect a data breach or accidental disclosure, I should:
 
 ---
 
-# Reflection
+## Reflection
 
 ## How Can You Handle Data Securely in Your Daily Tasks?
 
@@ -126,11 +126,17 @@ These risks can be reduced by following company policies, thinking carefully bef
 
 ---
 
-# Task
+## Example from My Workflow
+
+During my onboarding tasks, I used a GitHub Personal Access Token stored in a `.env` file to authenticate with GitHub. I kept the token out of version control and made sure it was never committed or shared publicly. This reinforced the importance of protecting sensitive credentials and checking files carefully before pushing changes to GitHub.
+
+---
+
+## Task
 
 ## One Habit I Will Adopt
 
-I will always check whether any information I share externally contains confidential or personal data before sending it, especially when using AI tools or online services.
+I will always check whether any information I share externally contains confidential or personal data before sending it, especially when using AI tools or online services. I will also make sure that sensitive files such as `.env` files, passwords, or API tokens are never committed to version control.
 
 ## One Key Learning
 
