@@ -38,7 +38,7 @@ It also improves maintainability because each class has a clear responsibility. 
 
 ## Reflect on a scenario where using OOP made a project easier to manage
 
-In this task, using an `Animal` parent class made it easier to manage different animal types. The program can store `Dog` and `Cat` objects in the same collection and process them using one loop.
+While building this task, I found that using an `Animal` parent class made the project easier to manage. Once I had implemented the shared behaviour in the parent class, adding the `Dog` and `Cat` classes required much less code. If I wanted to add another animal in the future, I could create a new class and reuse the existing program structure without changing the main processing logic.
 
 Without OOP, the program might require separate variables, duplicated code, and multiple conditional statements for every animal type. With inheritance and polymorphism, a new animal class can be added without rewriting the main processing logic.
 
