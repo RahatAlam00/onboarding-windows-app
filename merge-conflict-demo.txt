@@ -1,1 +1,1 @@
-This line will be changed to create a merge conflict.
+This line was changed on the conflict-demo branch.
