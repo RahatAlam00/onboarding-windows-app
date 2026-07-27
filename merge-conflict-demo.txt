@@ -1,1 +1,1 @@
-This line was changed directly on the main branch.
+This line combines the changes from main and the conflict-demo branch.
