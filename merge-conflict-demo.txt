@@ -1,1 +1,1 @@
-This line will be changed to create a merge conflict.
+This line was changed directly on the main branch.
