@@ -48,3 +48,14 @@ asks the developer to choose the correct final version of the code.
 
 I also learned that keeping branches small, communicating with teammates, and
 merging changes regularly can reduce the number of merge conflicts.
+
+## Pull Requests
+
+I learned that Pull Requests allow developers to propose changes without
+modifying the main branch directly.
+
+They provide a place for code review, discussion, feedback, and approval before
+changes become part of the project.
+
+Using Pull Requests helps teams maintain code quality and reduces the chance of
+introducing bugs into the main branch.
