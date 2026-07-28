@@ -81,3 +81,33 @@ Pull Requests provide a structured way for team members to review changes before
 ## What makes a well-structured Pull Request?
 
 A well-structured Pull Request has a clear and meaningful title, a concise description explaining the purpose of the change, a focused scope, appropriate tests where necessary, and references to related issues when applicable. It should be easy for reviewers to understand what changed and why.
+
+## Commit Message Practice
+
+Bad commit messages make project history difficult to understand.
+
+Developers should avoid writing commit titles that are excessively long because they become difficult to read in Git history.
+
+Well-written commit messages make it easier to understand a project's history, review changes, and identify when features or bugs were introduced.
+
+### Commit History Observation
+
+While exploring the React repository, I noticed that most commit messages were short, action-oriented, and specific. Examples included messages like "Validate Store operation invariants" and "Improve error message for invalid hook usage." These messages quickly communicate the purpose of the change without unnecessary detail, making the project's history easier to understand.
+
+## Commit Message Reflection
+
+### What makes a good commit message?
+
+A good commit message is short, specific, and written using an action verb such as Add, Fix, Update, Remove, or Refactor. It should clearly describe what changed without unnecessary detail and make the purpose of the change easy to understand.
+
+### How does a clear commit message help in team collaboration?
+
+Clear commit messages help team members quickly understand the history of a project without reading every code change. They improve communication, simplify code reviews, make debugging easier, and help developers identify when and why changes were introduced.
+
+### How can poor commit messages cause issues later?
+
+Poor commit messages such as "fixed stuff" or "update" provide little information about what actually changed. This makes debugging, maintaining software, and understanding project history much more difficult because developers must inspect each commit individually.
+
+### Commit History Observation
+
+While exploring the React repository, I noticed that most commit messages were short, action-oriented, and specific. Examples included "Validate Store operation invariants" and "Improve error message for invalid hook usage." These messages clearly communicate the purpose of the change without unnecessary detail, making the project's history easier to understand.
