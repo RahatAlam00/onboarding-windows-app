@@ -112,6 +112,32 @@ Poor commit messages such as "fixed stuff" or "update" provide little informatio
 
 While exploring the React repository, I noticed that most commit messages were short, action-oriented, and specific. Examples included "Validate Store operation invariants" and "Improve error message for invalid hook usage." These messages clearly communicate the purpose of the change without unnecessary detail, making the project's history easier to understand.
 
+### Commit Message Style Examples
+
+#### Vague commit message
+
+```text
+fixed stuff
+```
+
+This message is too vague because it does not explain what was changed or why. A developer reading the project history would need to open the commit and inspect the files to understand its purpose.
+
+#### Overly detailed commit message
+
+```text
+Updated git_understanding.md by adding a reflection explaining that excessively detailed commit messages reduce readability, make Git history harder to scan quickly, and should generally be avoided in favour of concise summaries.
+```
+
+This message contains useful information, but it is too long for a commit title. It makes the Git history difficult to scan and includes more detail than is necessary for a short summary.
+
+#### Well-structured commit message
+
+```text
+Add reflection on meaningful commit messages
+```
+
+This message is concise, specific, and begins with an action verb. It clearly explains what was added without including unnecessary detail.
+
 ## Debugging with Git Bisect
 
 ### What does `git bisect` do?
