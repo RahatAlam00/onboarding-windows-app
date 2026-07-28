@@ -1,0 +1,3 @@
+Expected result: 10
+Actual result: 10
+Status: PASS
