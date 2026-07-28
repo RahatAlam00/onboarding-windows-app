@@ -3,3 +3,5 @@ Actual result: 15
 Status: FAIL
 
 The calculation is currently working correctly.
+
+This file is used to practise locating regressions with Git.
