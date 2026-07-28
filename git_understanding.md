@@ -111,3 +111,25 @@ Poor commit messages such as "fixed stuff" or "update" provide little informatio
 ### Commit History Observation
 
 While exploring the React repository, I noticed that most commit messages were short, action-oriented, and specific. Examples included "Validate Store operation invariants" and "Improve error message for invalid hook usage." These messages clearly communicate the purpose of the change without unnecessary detail, making the project's history easier to understand.
+
+## Debugging with Git Bisect
+
+### What does `git bisect` do?
+
+`git bisect` helps identify the commit that introduced a bug by using a binary search through Git history. The developer provides a known good commit and a known bad commit. Git then checks out commits between them, and the developer marks each tested commit as good or bad until Git finds the first bad commit.
+
+### When would you use it in a real-world debugging situation?
+
+I would use `git bisect` when a feature worked previously but is broken in the current version, especially when many commits were made between the working and broken versions. It is useful when the bug can be reproduced consistently and there is a known point in the project history where the feature still worked correctly.
+
+### How does it compare to manually reviewing commits?
+
+`git bisect` is usually faster than manually reviewing commits because it eliminates approximately half of the remaining commits after each test. Manual review may require checking many commits one by one, while `git bisect` narrows the search efficiently. However, the developer still needs a reliable way to test whether each selected commit is good or bad.
+
+### Practical Exercise
+
+I created several commits containing a working result, then deliberately introduced an incorrect result in a later commit. I marked commit `a262dba` as known good and the latest broken commit as bad.
+
+Git checked out earlier commits for testing. I inspected `bisect-demo.txt` at each selected commit and marked it as good when the result was correct and bad when the incorrect result was present.
+
+Using this process, Git identified commit `5e5e84a` (`Update calculation result`) as the first commit that introduced the bug. I then used `git bisect reset` to leave bisect mode and return to my feature branch.
