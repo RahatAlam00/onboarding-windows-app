@@ -87,3 +87,5 @@ A well-structured Pull Request has a clear and meaningful title, a concise descr
 Bad commit messages make project history difficult to understand.
 
 Developers should avoid writing commit titles that are excessively long because they become difficult to read in Git history.
+
+Well-written commit messages make it easier to understand a project's history, review changes, and identify when features or bugs were introduced.
