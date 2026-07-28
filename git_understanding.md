@@ -59,3 +59,25 @@ changes become part of the project.
 
 Using Pull Requests helps teams maintain code quality and reduces the chance of
 introducing bugs into the main branch.
+
+## Reviewing an Open-Source Pull Request
+
+I reviewed React Pull Request #37050 ("[DevTools] Validate Store operation invariants").
+
+The author clearly explained the purpose of the change, describing what problem was being solved and why the change was necessary. Before the Pull Request was merged, the author requested a review from another maintainer. The reviewer asked questions about the implementation, particularly regarding the behaviour of Flow's `empty` type compared with TypeScript's `never` type.
+
+Rather than immediately approving the Pull Request, the reviewer and author discussed the implementation until they reached a shared understanding. During this process, the author updated the Pull Request several times by pushing improvements before the reviewer finally approved the changes.
+
+I also observed that the Pull Request included automated checks, regression tests, and continuous integration results before it was merged. After approval, the Pull Request was merged and the feature branch was deleted.
+
+This review taught me that Pull Requests are collaborative discussions rather than simply a way to merge code. They improve code quality, encourage knowledge sharing, and ensure changes are reviewed, tested, and understood before becoming part of the main branch.
+
+## Reflection: PR
+
+## Why are Pull Requests important in a team workflow?
+
+Pull Requests provide a structured way for team members to review changes before they are merged into the main branch. They encourage discussion, catch bugs early, maintain coding standards, and allow knowledge sharing across the team. They also provide a record of why a change was made and who reviewed it.
+
+## What makes a well-structured Pull Request?
+
+A well-structured Pull Request has a clear and meaningful title, a concise description explaining the purpose of the change, a focused scope, appropriate tests where necessary, and references to related issues when applicable. It should be easy for reviewers to understand what changed and why.
