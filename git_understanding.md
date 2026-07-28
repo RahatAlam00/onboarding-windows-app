@@ -81,3 +81,7 @@ Pull Requests provide a structured way for team members to review changes before
 ## What makes a well-structured Pull Request?
 
 A well-structured Pull Request has a clear and meaningful title, a concise description explaining the purpose of the change, a focused scope, appropriate tests where necessary, and references to related issues when applicable. It should be easy for reviewers to understand what changed and why.
+
+## Commit Message Practice
+
+Bad commit messages make project history difficult to understand.
