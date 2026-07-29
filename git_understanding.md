@@ -1,3 +1,4 @@
+<!-- cspell:ignore oneline -->
 # Understanding Merge Conflicts in Git
 
 ## What Causes Merge Conflicts?
@@ -159,3 +160,67 @@ I created several commits containing a working result, then deliberately introdu
 Git checked out earlier commits for testing. I inspected `bisect-demo.txt` at each selected commit and marked it as good when the result was correct and bad when the incorrect result was present.
 
 Using this process, Git identified commit `5e5e84a` (`Update calculation result`) as the first commit that introduced the bug. I then used `git bisect reset` to leave bisect mode and return to my feature branch.
+
+## Advanced Git Commands
+
+### `git checkout main -- <file>`
+
+#### What does it do?
+
+This command restores a specific file from the `main` branch without affecting other files or switching branches. It replaces the selected file with the version from `main`.
+
+#### When would I use it in a real project?
+
+I would use this command if I accidentally modified one file and wanted to restore only that file while keeping my other work. It is also useful when I need to copy the latest version of a single file from `main` into my current branch without merging the entire branch.
+
+---
+
+### `git cherry-pick <commit>`
+
+#### What does it do?
+
+`git cherry-pick` copies the changes from a specific commit onto the current branch without merging the whole source branch.
+
+#### When would I use it in a real project?
+
+I would use this when another branch contains one useful bug fix or feature that I need immediately, but I do not want to merge the entire branch because it may contain unfinished work.
+
+#### Practical exercise
+
+I created two commits on a temporary branch and then cherry-picked only the first commit onto my feature branch. Git created a new commit with the same changes but a different commit hash, demonstrating that cherry-pick copies a specific commit rather than merging the whole branch.
+
+---
+
+### `git log`
+
+#### What does it do?
+
+`git log` displays the commit history of a repository. It can show detailed commit information or a condensed view using options such as `--oneline` and `--graph`.
+
+#### When would I use it in a real project?
+
+I would use `git log` to understand how a project has evolved, find commit hashes, investigate when changes were introduced, and review the history before reverting, cherry-picking, or debugging.
+
+---
+
+### `git blame <file>`
+
+#### What does it do?
+
+`git blame` shows which commit last modified each line of a file, along with the author and date.
+
+#### When would I use it in a real project?
+
+I would use it to investigate the history of a specific line of code, identify the commit that introduced a change, and understand why it was modified before making further changes.
+
+#### Practical exercise
+
+I used `git blame` on `cherry-pick-demo.txt`, which showed that the line was last modified by commit `14bb808`. I then used `git show` to inspect that commit and see exactly what changes it introduced.
+
+---
+
+## Reflection
+
+### What surprised me while testing these commands?
+
+I was surprised that `git cherry-pick` creates a completely new commit with a different commit hash even though the code changes are the same. I also found it useful that `git blame` identifies the exact commit responsible for each line, making it much easier to trace the history of a file. Another interesting discovery was that `git checkout main -- <file>` restores only the selected file without affecting the rest of the working directory, which is much safer than restoring the entire project.
