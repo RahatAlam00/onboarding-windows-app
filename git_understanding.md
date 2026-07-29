@@ -219,6 +219,36 @@ I used `git blame` on `cherry-pick-demo.txt`, which showed that the line was las
 
 ---
 
+## Practical Evidence
+
+### File restoration
+
+I modified `git_understanding.md` and restored it using:
+
+```bash
+git checkout main -- git_understanding.md
+```
+
+### Cherry-pick
+
+Source commit:
+
+```text
+2ffa3f7 Add first cherry-pick demo
+```
+
+Cherry-picked commit:
+
+```text
+14bb808 Add first cherry-pick demo
+```
+
+This demonstrated that Git created a new commit with a different hash while copying only the selected changes.
+
+### Git blame
+
+Running `git blame cherry-pick-demo.txt` showed that the line was last modified by commit `14bb808`, which I then inspected using `git show`.
+
 ## Reflection
 
 ### What surprised me while testing these commands?
