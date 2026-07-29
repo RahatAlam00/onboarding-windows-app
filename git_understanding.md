@@ -268,3 +268,17 @@ Branches allow developers to work independently without affecting the stable ver
 ### What happens if two people edit the same file on different branches?
 
 Git keeps the changes separate while each person works. When the branches are merged, Git automatically combines changes if they are in different parts of the file. If both people changed the same lines, Git reports a merge conflict that must be resolved before the merge can be completed.
+
+## Staging vs. Committing
+
+### What is the difference between staging and committing?
+
+Staging selects which changes will be included in the next commit. The changes remain editable and are not yet part of Git's permanent history. Committing records the staged changes as a new snapshot in the repository history with a commit message, author, and timestamp.
+
+### Why does Git separate these two steps?
+
+Git separates staging and committing so developers can carefully choose which changes belong together. This allows related changes to be grouped into meaningful commits instead of committing every modified file at once.
+
+### When would you want to stage changes without committing?
+
+I would stage changes when I have finished part of my work but want to review it before creating a commit. It is also useful when multiple files have been modified but only some of them belong to the current feature or bug fix.
