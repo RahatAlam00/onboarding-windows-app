@@ -254,3 +254,17 @@ Running `git blame cherry-pick-demo.txt` showed that the line was last modified 
 ### What surprised me while testing these commands?
 
 I was surprised that `git cherry-pick` creates a completely new commit with a different commit hash even though the code changes are the same. I also found it useful that `git blame` identifies the exact commit responsible for each line, making it much easier to trace the history of a file. Another interesting discovery was that `git checkout main -- <file>` restores only the selected file without affecting the rest of the working directory, which is much safer than restoring the entire project.
+
+## Branching and Team Collaboration
+
+### Why is pushing directly to `main` problematic?
+
+Pushing directly to `main` is risky because mistakes immediately affect the shared codebase. Bugs, unfinished features, or accidental changes can break the project for everyone. It also removes the opportunity for teammates to review the changes before they become part of the main branch.
+
+### How do branches help with reviewing code?
+
+Branches allow developers to work independently without affecting the stable version of the project. When the work is complete, a Pull Request can be opened so teammates can review the code, suggest improvements, and approve the changes before it is merged into `main`.
+
+### What happens if two people edit the same file on different branches?
+
+Git keeps the changes separate while each person works. When the branches are merged, Git automatically combines changes if they are in different parts of the file. If both people changed the same lines, Git reports a merge conflict that must be resolved before the merge can be completed.
