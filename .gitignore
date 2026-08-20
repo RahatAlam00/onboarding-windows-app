@@ -9,3 +9,5 @@ __pycache__/
 # Build output
 bin/
 obj/
+# Runtime log files
+logs/
