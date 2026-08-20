@@ -113,7 +113,9 @@ Poor commit messages such as "fixed stuff" or "update" provide little informatio
 
 While exploring the React repository, I noticed that most commit messages were short, action-oriented, and specific. Examples included "Validate Store operation invariants" and "Improve error message for invalid hook usage." These messages clearly communicate the purpose of the change without unnecessary detail, making the project's history easier to understand.
 
-### Commit Message Style Examples
+### Evidence: Three Required Commit Message Styles
+
+The following are the exact three commit messages I created and pushed for this exercise.
 
 #### Vague commit message
 
