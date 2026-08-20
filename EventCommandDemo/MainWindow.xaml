@@ -1,0 +1,27 @@
+﻿<Window x:Class="EventCommandDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Event and Command Demo"
+        Height="320"
+        Width="500">
+
+    <StackPanel Margin="30"
+                VerticalAlignment="Center">
+
+        <TextBlock Text="Command / MVVM"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20" />
+
+        <Button Content="Run Command"
+                Width="140"
+                Height="40"
+                HorizontalAlignment="Left"
+                Command="{Binding RunCommand}" />
+
+        <TextBlock Text="{Binding ResultMessage}"
+                   FontSize="16"
+                   Margin="0,20,0,0" />
+
+    </StackPanel>
+</Window>
